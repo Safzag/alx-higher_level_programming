@@ -1,12 +1,17 @@
-cript that fetches https://alx-intranet.hbtn.io/status.
+#!/usr/bin/python3
+"""Write a Python script that fetches https://alx-intranet.hbtn.io/status
+
+    *	You must use the package requests
+    *	You are not allow to import packages other than requests
+    *	The body of the response must be display like the following example
+	(tabulation before -)
 """
+
 import requests
 
 
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
-    response = requests.get(url)
-    content = response.text
-    print('Body response:')
-    print('\t- type: {}'.format(type(content)))
-    print('\t- content: {}'.format(content))
+    r = requests.get("https://alx-intranet.hbtn.io/status")
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))

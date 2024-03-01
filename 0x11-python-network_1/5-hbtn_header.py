@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""
-Python script that takes in a URL, sends a request to the URL and displays
-the value of the X-Request-Id variable found in the header of the response.
-"""
-import requests
-import sys
+"""Write a Python script that takes in a URL, sends a request to the URL and displays the value of the variable X-Request-Id in the response header
 
+    *	You must use the packages requests and sys
+    *	You are not allow to import other packages than requests and sys
+    *	The value of this variable is different for each request
+    *	You don’t need to check script arguments (number and type)
+"""
+
+import requests
+from sys import argv
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    response = requests.get(url)
-    value = response.headers.get("X-Request-Id")
-    print(value)
+    r = requests.get(argv[1])
+    result = r.headers.get("X-Request-Id")
+    print(result)
